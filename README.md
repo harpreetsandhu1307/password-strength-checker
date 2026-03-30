@@ -15,4 +15,4 @@ A Python tool that checks how strong a password is.
 - re (regex) module
 
 ## Author
-Your Name
+Harpreet Sandhu
