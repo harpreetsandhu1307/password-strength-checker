@@ -1,13 +1,13 @@
 import re
 
 def check_length(password):
-    return len(password) >= 8          #  Fix 1: was len>=8, missing (password)
+    return len(password) >= 8        
 
 def check_uppercase(password):
     return bool(re.search(r'[A-Z]', password))
 
 def check_lowercase(password):
-    return bool(re.search(r'[a-z]', password))  # Fix 2: was [A-Z] instead of [a-z]
+    return bool(re.search(r'[a-z]', password))  
 
 def check_digits(password):
     return bool(re.search(r'[0-9]', password))
@@ -18,7 +18,7 @@ def check_specialchar(password):
 def check_strength(password):
     print("\nAnalyzing your password...\n")
 
-    criteria = {                                  #  Fix 3: was missing = sign
+    criteria = {                                
         "Minimum 8 characters"   : check_length(password),
         "Uppercase letter (A-Z)" : check_uppercase(password),
         "Lowercase letter (a-z)" : check_lowercase(password),
@@ -27,13 +27,13 @@ def check_strength(password):
     }
 
     passed = 0
-    for rule, result in criteria.items():        #  Fix 4: indented inside function
+    for rule, result in criteria.items():      
         status = "True" if result else "False"
         print(f"{status} {rule}")
         if result:
             passed += 1
 
-    print("\n--- Result ---")                    # Fix 5: indented inside function
+    print("\n--- Result ---")                   
     if passed == 5:
         print("STRONG password! Great job.")
     elif passed >= 3:
